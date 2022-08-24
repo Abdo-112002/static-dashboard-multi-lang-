@@ -1,0 +1,49 @@
+.dropdown__menu {
+    background-color: $whiteColor;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-end: 0;
+    width: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba($color: #000000, $alpha: .10);
+    display:none;
+    &.active {
+        display: block;
+    }
+    &--content {
+        max-height: 350px;
+        overflow-y: auto;
+
+        .item {
+            @extend .row;
+            @extend .column-gap;
+            @extend .align-items-center;
+            flex-wrap: nowrap;
+            padding: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid $secondBgColor;
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit:fill;
+                flex-shrink: 0;
+            }
+
+            .text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: white-space 300ms ease-in-out;
+            }
+
+            &:hover .text , &:hover{
+                white-space: normal;
+                background-color: $secondBgColor;
+                align-items: flex-start;
+            }
+        }
+    }
+}

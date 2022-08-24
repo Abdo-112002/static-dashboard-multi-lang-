@@ -1,0 +1,66 @@
+
+
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: $mainFont;
+    color: $textColor;
+    overflow-x: hidden;
+    font-style: italic;
+    &[dir=rtl]  {
+        font-family: $arabicFont ;
+    }
+}
+
+.wrapper {
+    display: flex;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track ,
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba($color: #000000, $alpha: .3);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba($color: #000000, $alpha: .6);
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;padding: 0;
+}
+
+a {
+    @include reSetting-a(16px,$siteColor);
+}
+
+
+p{ 
+    font-size: 18px;
+    word-spacing: 1.5px;
+    color: $textColor;
+    text-transform: capitalize;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: baseline;
+}

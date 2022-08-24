@@ -1,0 +1,24 @@
+// import abstracts file
+@import 
+    './sass/abstracts/vars',
+    './sass/abstracts/mixin',
+    './sass/abstracts/functions';
+
+
+// import base fils
+@import 
+    './sass/base/base',
+    './sass/base/helper';
+
+// import components fils
+@import 
+    './sass/components/dropDown';
+
+// import layout fils
+@import 
+    './sass/layout/header',
+    './sass/layout/aside';
+
+// import pages fils
+@import  
+    './sass/pages/analytics';
