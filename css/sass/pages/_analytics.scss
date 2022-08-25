@@ -3,7 +3,7 @@
 .Analytics {
     width: 100%;
     padding-block-start: 30px;
-    background-color: $secondBgColor;
+    background-color: var(--secondBgColor);
     overflow: hidden;
 
     .row {
@@ -17,7 +17,7 @@
         width: calc(25% - 20px);
         min-height: 150px;
         border-radius: 7px;
-        color: $whiteColor;
+        color: var(--whiteColor);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -28,6 +28,12 @@
         box-shadow: 1px 2px 20px 4px rgba(0,0,0,0.2);
         -webkit-box-shadow: 1px 2px 20px 4px rgba(0,0,0,0.2);
         -moz-box-shadow: 1px 2px 20px 4px rgba(0,0,0,0.2);
+        @include devices(largeScreen) {
+            width: calc(50% - 10px);
+        }
+        @include devices(tablet) {
+            width: calc(100% - 0px);
+        }
         &:nth-last-of-type(even) {
             background: #56CCF2;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #2F80ED, $siteColor);  /* Chrome 10-25, Safari 5.1-6 */
@@ -41,7 +47,7 @@
     }
 
     .table {
-        background-color: $whiteColor;
+        background-color: var(--whiteColor);
         width: 100%;
         padding: 20px;
         border-radius: 7px;
@@ -56,7 +62,10 @@
                 position: relative;
                 text-align: center;
                 padding-block: 10px;
-                border-block-end: 2px solid $secondBgColor;
+                border-block-end: 2px solid var(--secondBgColor);
+                @include devices(tablet) {
+                    grid-template-columns: repeat(6 , minmax(120px,1fr));
+                }
                 &:first-of-type {
                     font-weight: bold;
                     border: none;
@@ -90,7 +99,7 @@
                 .status {
                     .accepted ,.canceld{
                         background-color: $siteColor;
-                        color: $whiteColor;
+                        color: var(--whiteColor);
                         padding-block: 5px;
                         padding-inline : 7px;
                         border-radius: 3px;
@@ -110,7 +119,7 @@
                         width: 80%;
                         height: 8px;
                         border-radius: 5px;
-                        background-color: $whiteColor;
+                        background-color: var(--whiteColor);
                         box-shadow: inset 1px 2px 4px rgba(0,0,0,0.2);
                         position: relative;
                         &::after  {
@@ -139,7 +148,7 @@
                         padding: 5px 15px;
                         border: none;
                         outline: none;
-                        color: $whiteColor;
+                        color: var(--whiteColor);
                         border-radius: 5px;
                         cursor: pointer;
                         font-weight: bold;
@@ -159,5 +168,8 @@
     .charts {
         @extend .table;
         height: 500px;
+        @include devices(largeScreen) {
+            padding: 10px ;
+        }
     }
 }

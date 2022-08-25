@@ -4,11 +4,21 @@
 $siteColor: #0076FF;
 $siteColor2: #4680CA;
 $mainBgColor : aliceblue;
+
 $secondBgColor:#f1f1f1;
-$darkColor:#131921;
 $whiteColor:#fff;
 $textColor : #727475;
+
 $mainFont : 'Poppins', sans-serif ;
 $arabicFont : 'Tajawal', sans-serif;
 $prefixes-list: (webkit , moz , o);
-
+:root {
+    --textColor : #{$textColor};
+    --whiteColor : #{$whiteColor};
+    --secondBgColor : #{$secondBgColor};
+}
+.dark {
+    --textColor : #f5f6fa;
+    --whiteColor : #232426;
+    --secondBgColor : #181818;
+}

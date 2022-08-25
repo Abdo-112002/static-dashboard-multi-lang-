@@ -11,7 +11,7 @@
 }
 
 @mixin largeScreen {
-    @media screen and (min-width: 992px) {
+    @media screen and (max-width: 1024px) {
         @content;
     }
 }
@@ -24,9 +24,15 @@
 
 
 @mixin devices ($breakpoint) { //the name of the mixin is devices
+
+    @if $breakpoint == largeScreen {    
+        @media only screen and (max-width: 1024px) {
+           @content;
+        }
+     }
   
     @if $breakpoint == tablet {    
-       @media only screen and (max-width: 757px) {
+       @media only screen and (max-width: 768px) {
           @content;
        }
     }

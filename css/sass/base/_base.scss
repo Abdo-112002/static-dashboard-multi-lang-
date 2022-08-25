@@ -8,7 +8,7 @@
 body {
     position: relative;
     font-family: $mainFont;
-    color: $textColor;
+    color: var(--textColor);
     overflow-x: hidden;
     font-style: italic;
     &[dir=rtl]  {
@@ -55,7 +55,7 @@ a {
 p{ 
     font-size: 18px;
     word-spacing: 1.5px;
-    color: $textColor;
+    color: var(--textColor);
     text-transform: capitalize;
 }
 

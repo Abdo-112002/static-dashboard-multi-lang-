@@ -69,7 +69,8 @@ function changeLang(selectorLang) {
 }
 
 //charts
-let years = [2017,2018,2019,2020,2021,2022],
+let currentYear = new Date().getFullYear();
+let years = [2017,2018,2019,2020,2021,currentYear],
     visitors = [150,400,300,450,700,1500],
     hired = [85,100,120,277,155,400];
 
@@ -90,7 +91,7 @@ let options = {
         },       
     ],
     xaxis: {
-      categories: [...years],
+        categories: [...years],
     },
     colors:['#4680CA', '#0076FF'],
     
@@ -99,3 +100,10 @@ let options = {
 let chart = new ApexCharts(document.querySelector("#chart"), options);
   
 chart.render();
+
+
+// toggle theme-mode
+let modeIcon = document.querySelector(".mode");
+modeIcon.addEventListener('click',() => {
+    document.body.classList.toggle('dark');
+});

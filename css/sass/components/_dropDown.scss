@@ -1,5 +1,5 @@
 .dropdown__menu {
-    background-color: $whiteColor;
+    background-color: var(--whiteColor);
     position: absolute;
     inset-block-start: 100%;
     inset-inline-end: 0;
@@ -8,6 +8,9 @@
     overflow: hidden;
     box-shadow: 0px 8px 16px 0px rgba($color: #000000, $alpha: .10);
     display:none;
+    @include devices(mobile) {
+        width: 200px;
+    }
     &.active {
         display: block;
     }
@@ -41,7 +44,7 @@
 
             &:hover .text , &:hover{
                 white-space: normal;
-                background-color: $secondBgColor;
+                background-color: var(--secondBgColor);
                 align-items: flex-start;
             }
         }
