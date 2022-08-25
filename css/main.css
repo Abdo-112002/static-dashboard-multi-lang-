@@ -208,6 +208,8 @@ img {
 
 .header__logo .toggle_lang {
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
   font-size: 17px;
   outline: none;
   border: none;
@@ -215,6 +217,10 @@ img {
           border-inline-start: 3px solid #0076FF;
   -webkit-border-after: 1px solid #f1f1f1;
           border-block-end: 1px solid #f1f1f1;
+}
+
+.header__logo .toggle_lang[dir=rtl] {
+  font-family: "Tajawal", sans-serif;
 }
 
 .header__input {
@@ -369,16 +375,22 @@ img {
   -webkit-padding-before: 30px;
           padding-block-start: 30px;
   background-color: #f1f1f1;
+  overflow: hidden;
 }
 
 .Analytics .row, .Analytics .dropdown__menu--content .item, .dropdown__menu--content .Analytics .item, .Analytics .header__logo, .Analytics .header__control {
   row-gap: 20px;
+  -webkit-margin-after: 50px;
+          margin-block-end: 50px;
+}
+
+.Analytics .row:last-of-type, .Analytics .dropdown__menu--content .item:last-of-type, .dropdown__menu--content .Analytics .item:last-of-type, .Analytics .header__logo:last-of-type, .Analytics .header__control:last-of-type {
+  -webkit-margin-after: 0px;
+          margin-block-end: 0px;
 }
 
 .Analytics .box {
   width: calc(25% - 20px);
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   min-height: 150px;
   border-radius: 7px;
   color: #fff;
@@ -419,5 +431,137 @@ img {
   background: -webkit-gradient(linear, left top, right top, from(#5691c8), to(#457fca));
   background: linear-gradient(to right, #5691c8, #457fca);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.Analytics .table, .Analytics .charts {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+.Analytics .table__body {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.Analytics .table__body--row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 1fr))[6];
+      grid-template-columns: repeat(6, minmax(180px, 1fr));
+  position: relative;
+  text-align: center;
+  padding-block: 10px;
+  -webkit-border-after: 2px solid #f1f1f1;
+          border-block-end: 2px solid #f1f1f1;
+}
+
+.Analytics .table__body--row:first-of-type {
+  font-weight: bold;
+  border: none;
+}
+
+.Analytics .table__body--row:not(:first-of-type)::before {
+  content: '';
+  width: 4px;
+  height: 70%;
+  position: absolute;
+  inset-inline-start: 0px;
+  inset-block-start: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #0076FF;
+}
+
+.Analytics .table__body--row > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Analytics .table__body--row .avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.Analytics .table__body--row .status .accepted, .Analytics .table__body--row .status .canceld {
+  background-color: #0076FF;
+  color: #fff;
+  padding-block: 5px;
+  padding-inline: 7px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.Analytics .table__body--row .status .accepted {
+  background-color: #0076FF;
+}
+
+.Analytics .table__body--row .status .canceld {
+  background-color: #4680CA;
+}
+
+.Analytics .table__body--row .progress .bar {
+  width: 80%;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.Analytics .table__body--row .progress .bar::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 80%;
+  height: 100%;
+  background-color: #0076FF;
+  border-radius: inherit;
+}
+
+.Analytics .table__body--row .progress .bar::before {
+  content: attr(data-rang);
+  position: absolute;
+  inset-block-end: 7px;
+  inset-inline-start: 0;
+  font-size: 14px;
+}
+
+.Analytics .table__body--row .action button {
+  margin: 0px 5px;
+  padding: 5px 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.Analytics .table__body--row .action button.fire {
+  background-color: #0076FF;
+}
+
+.Analytics .table__body--row .action button.hire {
+  background-color: #4680CA;
+}
+
+.Analytics .charts {
+  height: 500px;
 }
 /*# sourceMappingURL=main.css.map */

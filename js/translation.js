@@ -27,6 +27,13 @@ let translation = {
         in_progress : "In Progress",
         completed : "Completed",
         issues : "Issues",
+
+        id : "Id",
+        avatar : "Avatar",
+        name : "Name",
+        status : "Status",
+        achievement : "Target Achievement",
+        actions : "Actions",
     },
 
     ar: {
@@ -54,6 +61,13 @@ let translation = {
         in_progress : "في تَقَدم",
         completed : "مكتمل",
         issues : "مشاكل",
+
+        id : "الرقم التسلسلي",
+        avatar : "الصورة الشخصيه",
+        name : "الأسم",
+        status : "الحالة",
+        achievement : "تحقيق الهدف",
+        actions : "أجراءات",
     }
 
 }

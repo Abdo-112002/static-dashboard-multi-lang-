@@ -4,14 +4,17 @@
     width: 100%;
     padding-block-start: 30px;
     background-color: $secondBgColor;
+    overflow: hidden;
 
     .row {
         row-gap: 20px;
+        margin-block-end: 50px;
+        &:last-of-type{
+            margin-block-end: 0px;
+        }
     }
     .box {
-        // width: 23%;
         width: calc(25% - 20px);
-        flex-shrink: 0;
         min-height: 150px;
         border-radius: 7px;
         color: $whiteColor;
@@ -35,5 +38,126 @@
             background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */            
         }
+    }
+
+    .table {
+        background-color: $whiteColor;
+        width: 100%;
+        padding: 20px;
+        border-radius: 7px;
+
+        &__body {
+            max-height: 400px;
+            overflow: auto;
+
+            &--row {
+                display: grid;
+                grid-template-columns: repeat(6 , minmax(180px,1fr));
+                position: relative;
+                text-align: center;
+                padding-block: 10px;
+                border-block-end: 2px solid $secondBgColor;
+                &:first-of-type {
+                    font-weight: bold;
+                    border: none;
+                }
+                &:not(:first-of-type)::before {
+                    content: '';
+                    width: 4px;
+                    height: 70%;
+                    position: absolute;
+                    inset-inline-start: 0px;
+                    inset-block-start: 50%;
+                    transform: translateY(-50%);
+                    background-color: $siteColor;
+                }
+
+                & > div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .avatar {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 20px;
+                        object-fit:fill;
+                    }
+                }
+
+                .status {
+                    .accepted ,.canceld{
+                        background-color: $siteColor;
+                        color: $whiteColor;
+                        padding-block: 5px;
+                        padding-inline : 7px;
+                        border-radius: 3px;
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                    .accepted {
+                        background-color: $siteColor;
+                    }
+                    .canceld {
+                        background-color: $siteColor2;
+                    }
+                }
+
+                .progress {
+                    .bar {
+                        width: 80%;
+                        height: 8px;
+                        border-radius: 5px;
+                        background-color: $whiteColor;
+                        box-shadow: inset 1px 2px 4px rgba(0,0,0,0.2);
+                        position: relative;
+                        &::after  {
+                            content: '';
+                            position: absolute;
+                            inset-block-start: 0;
+                            inset-inline-start: 0;
+                            width: 80%;
+                            height: 100%;
+                            background-color: $siteColor;
+                            border-radius: inherit;
+                        }
+                        &::before {
+                            content: attr(data-rang);
+                            position: absolute;
+                            inset-block-end: 7px;
+                            inset-inline-start: 0;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .action {
+                    button {
+                        margin: 0px 5px;
+                        padding: 5px 15px;
+                        border: none;
+                        outline: none;
+                        color: $whiteColor;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-weight: bold;
+                        font-style: italic;
+                        &.fire {
+                            background-color: $siteColor;
+                        }
+                        &.hire {
+                            background-color: $siteColor2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .charts {
+        @extend .table;
+        height: 500px;
     }
 }

@@ -18,11 +18,16 @@
         }
         .toggle_lang {
             cursor: pointer;
+            font-family: $mainFont;
+            font-style: italic;
             font-size: 17px;
             outline: none;
             border: none;
             border-inline-start: 3px solid $siteColor;
             border-block-end: 1px solid $secondBgColor;
+            &[dir=rtl]  {
+                font-family: $arabicFont ;
+            }
         }
     }
 

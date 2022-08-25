@@ -67,3 +67,35 @@ function changeLang(selectorLang) {
         }
     }
 }
+
+//charts
+let years = [2017,2018,2019,2020,2021,2022],
+    visitors = [150,400,300,450,700,1500],
+    hired = [85,100,120,277,155,400];
+
+let options = {
+    chart: {
+      type: 'area',
+      width :"100%",
+      height : "100%",
+    },
+    series: [
+        {
+            name: 'Visitors',
+            data: [...visitors],
+        },    
+        {
+            name: 'Hired',
+            data: [...hired],
+        },       
+    ],
+    xaxis: {
+      categories: [...years],
+    },
+    colors:['#4680CA', '#0076FF'],
+    
+  }
+  
+let chart = new ApexCharts(document.querySelector("#chart"), options);
+  
+chart.render();
