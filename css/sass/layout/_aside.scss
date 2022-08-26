@@ -26,7 +26,7 @@
     }
     .content {
         max-height:  calc(100vh - 69.600px);
-        overflow: hidden;
+        overflow-y: auto;
     }
     &__item {
         display: flex;
