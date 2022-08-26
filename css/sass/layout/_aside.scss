@@ -24,6 +24,9 @@
     &.active:hover {
         width: 250px;
     }
+    .content {
+        overflow: hidden;
+    }
     &__item {
         display: flex;
         align-items: center;

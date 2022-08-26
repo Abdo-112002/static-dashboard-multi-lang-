@@ -378,6 +378,10 @@ img {
   width: 250px;
 }
 
+.aside .content {
+  overflow: hidden;
+}
+
 .aside__item {
   display: -webkit-box;
   display: -ms-flexbox;
